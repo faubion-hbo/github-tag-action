@@ -40,9 +40,9 @@ inputs:
     description: "Comma separated list of release rules. Format: `<keyword>:<release_type>`. Example: `hotfix:patch,pre-feat:preminor`."
     required: false
   release_branches:
-    description: "Comma separated list of branches (bash reg exp accepted) that will generate the release tags. Other branches and pull-requests generate versions postfixed with the commit hash and do not generate any tag. Examples: `master` or `.*` or `release.*,hotfix.*,master`..."
+    description: "Comma separated list of branches (JavaScript regular expression accepted) that will generate the release tags. Other branches and pull-requests generate versions postfixed with the commit hash and do not generate any repository tag. Examples: `^master$` or `release` or `.*` or `^release,^release-.*-hotfix$,^master$`, ..."
     required: false
-    default: "master,main"
+    default: "^master$,^main$"
   pre_release_branches:
     description: "Comma separated list of branches (bash reg exp accepted) that will generate pre-release tags."
     required: false
